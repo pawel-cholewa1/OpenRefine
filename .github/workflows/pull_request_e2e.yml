@@ -90,7 +90,7 @@
           with:
             distribution: temurin
             java-version: 17
-            # cache: maven
+            cache: maven
         - name: Set up Maven
           uses: stCarolas/setup-maven@v5
           with:
