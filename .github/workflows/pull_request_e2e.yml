@@ -92,7 +92,7 @@
             java-version: 17
             cache: maven
         - name: Build OpenRefine
-          run: refine.bat build
+          run: .\refine.bat build
         - name: Setup Node
           uses: actions/setup-node@v4
           with:
@@ -117,7 +117,7 @@
           run: |
             echo REFINE_MIN_MEMORY=1400M >> ./refine.ini
             echo REFINE_MEMORY=4096M >> ./refine.ini
-            refine.bat e2e_tests
+            .\refine.bat e2e_tests
           env:
             CYPRESS_BROWSER: ${{ matrix.browser }}
             CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
