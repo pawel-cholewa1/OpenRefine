@@ -95,6 +95,10 @@
           uses: stCarolas/setup-maven@v5
           with:
             maven-version: 3.8.2
+        - name: Set path to maven
+          id: mvn_path
+          run: |
+            echo "/opt/maven/bin" >> $GITHUB_ENV
         - name: Build OpenRefine
           run: .\refine.bat build
         - name: Setup Node
