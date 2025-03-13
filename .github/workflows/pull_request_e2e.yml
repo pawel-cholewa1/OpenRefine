@@ -95,16 +95,16 @@
           uses: stCarolas/setup-maven@v5
           with:
             maven-version: 3.8.2
-        - name: Set path to maven
-          id: mvn_path
-          run: |
-            echo "/opt/maven/bin" >> $GITHUB_ENV
-        - name: Build OpenRefine
-          run: .\refine.bat build
+        # - name: Set path to maven
+        #   id: mvn_path
+        #   run: |
+        #     echo "/opt/maven/bin" >> $GITHUB_ENV
         - name: Setup Node
           uses: actions/setup-node@v4
           with:
             node-version: "20"
+        - name: Build OpenRefine
+          run: .\refine.bat build
         - name: Restore Tests dependency cache
           uses: actions/cache@v4
           with:
